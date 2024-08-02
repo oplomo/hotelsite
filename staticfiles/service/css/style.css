@@ -1331,7 +1331,7 @@ p{
         }
 
         .station{    
-            width: 95%;
+            width: 96%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1341,7 +1341,7 @@ p{
         .sta_image{
             order:1;
             display: block;
-             width: 45%;
+             width: 42%;
              height: 100%;
             padding: 0px;
             margin-bottom: 5px;
@@ -1354,8 +1354,8 @@ p{
         .sta_price{
             
             order: 2;
-            width: 45%;
-            margin: 5px;
+            width: 43%;
+            margin: 3px;
         }
 
         .sta_amn{
