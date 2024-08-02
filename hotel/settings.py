@@ -27,8 +27,7 @@ SECRET_KEY = "django-insecure-y0tjvd@thr%0jb6uuoqxt4i=yl-^tp$(nfupx3d+z(3$a+w(ky
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'hotelsite-7y00.onrender.com']
-
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "hotelsite-7y00.onrender.com"]
 
 
 # Application definition
@@ -117,11 +116,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_DIRS = [
-    BASE_DIR / "service/static/service",  # Add your app's static directory here
+    BASE_DIR / "service/static/service",
 ]
 
 # Default primary key field type
