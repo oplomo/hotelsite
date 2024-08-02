@@ -113,8 +113,8 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Set the base directory of your project
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# # Set the base directory of your project
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -132,11 +132,9 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-# Define the media directory where uploaded files will be stored
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-# Define the URL for serving media files during development
+# Media files (User uploads)
 MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 LOGIN_REDIRECT_URL = "service:home"
 LOGOUT_REDIRECT_URL = "service:home"
