@@ -1,0 +1,19 @@
+{% extends "service/base.html" %}
+{% load static %}
+{% block title %} {{ dish.name }}{% endblock title %}
+{% block content %}
+<p class="navigation">
+    <span><a href="{% url "service:home" %}">HOME</a></span> >>
+    <span><a href="{% url 'service:'|add:name  %}">{{ name|upper }}</a></span> >>
+    <span><a href="{{ dish.get_absolute_url }}">{{ dish.name|upper }}</a></span>
+</p>
+ <div class="dish_title" style="background-image: url('{{ dish.image.url }}')">
+    <div class="dish_name">{{ dish.name }}</div>
+ </div>
+
+ <div class="dish_about">
+    {{ dish.about }}
+ </div>
+
+ {% include "service/card.html" %}
+{% endblock content %}

@@ -1,0 +1,222 @@
+{% extends "service/base.html" %}
+{% load static %}
+{% block title %}home {% endblock title %}
+{% block content %}
+{% for hotel in details %}
+<marquee behavior="" direction="right"><span class="hotel_name">WELCOME TO &nbsp;&nbsp;&nbsp; <span class="hot_name">THE {{ hotel.name }}</span></span></marquee>
+{% endfor %}
+
+<div class="mth" id="vice">
+       <div class="swiper">
+         <div class="swiper-wrapper">            
+            <div class="swiper-slide ima" id="ser1">
+                    
+                     <div class="display">
+                        <div class="motto">LUXURY AT ITS BEST</div>
+                        <div class="logo"><img src="{% static "service/images/hotel_logo.jpg" %}" alt="logo" class="footer_logo"></div>
+                     </div>
+
+            </div>
+            <div class="swiper-slide ima" id="ser2">
+
+                   
+                    <div class="display">
+                        <div class="motto">LUXURY AT ITS BEST</div>
+                        <div class="logo"><img src="{% static "service/images/hotel_logo.jpg" %}" alt="logo" class="footer_logo"></div>
+                     </div>                     
+
+            </div>
+            <div class="swiper-slide ima" id="ser3">
+               
+               
+                 <div class="display">
+                    <div class="motto">LUXURY AT ITS BEST</div>
+                    <div class="logo"><img src="{% static "service/images/hotel_logo.jpg" %}" alt="logo" class="footer_logo"></div>
+                 </div>
+
+            </div>
+            <div class="swiper-slide ima" id="ser4">
+
+                  
+                   <div class="display">
+                    <div class="motto">LUXURY AT ITS BEST</div>
+                    <div class="logo"><img src="{% static "service/images/hotel_logo.jpg" %}" alt="logo" class="footer_logo"></div>
+                 </div>
+
+            </div>
+            <div class="swiper-slide ima" id="ser5">
+
+               
+                <div class="display">
+                    <div class="motto">LUXURY AT ITS BEST</div>
+                    <div class="logo"><img src="{% static "service/images/hotel_logo.jpg" %}" alt="logo" class="footer_logo"></div>
+                 </div>
+
+            </div>
+           
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev ok"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
+
+
+
+
+<div class="mth" id="vice">
+    
+    <!-- Slider main container -->
+    <p class="room_suites">ROOMS & SUITES</p>
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+        
+           {% for rtype in rtype %}
+           
+            <div class="swiper-slide ima" id="room{{rtype.id}}">
+                   
+                <div class="display">
+                    <a href="{{ rtype.get_absolute_url }}"><div class="image_link">{{ rtype.name }}</div></a>
+                    <div class="image_button"><a href="{{ rtype.get_absolute_url }}" class="log_reg">learn more</a></div>
+                 </div>
+                     <!--content-->
+
+            </div>
+            {% endfor %}
+
+        </div>
+           
+        <div class="swiper-pagination"></div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+    </div>
+</div>
+
+<div class="home_booking">
+        
+    <form method="post" action="{% url "service:booking" %}">
+
+        {% csrf_token %}
+
+        <!-- Start Date Field -->
+        <div class="inp">
+            <label for="id_start_date" class="lack">Start Date:</label>
+            {{ form.start_date }}
+           
+        </div>
+    
+        <!-- End Date Field -->
+        <div class="inp">
+            <label for="id_end_date" class="lack">End Date:</label>
+            {{ form.end_date }}
+         
+        </div>
+    
+        <!-- Room Type Field -->
+ <div class="inp">
+            <label for="id_room_type" class="lack">Room Type:</label>
+            {{ form.room_type }}
+                      
+        </div>
+        <button type="submit">Check Availability</button>
+    
+  
+       </form>
+
+</div>
+
+
+<div class="restourant">
+        <div class="restaurant_title"><a href="{% url "service:restaurant" %}">RESTOURANT & BAR</a>
+            <a href="{% url "service:restaurant" %}" class="res_footer">more &rarr;</a>
+        </div>
+        <div class="restourant_items">
+ 
+            {% for dish in restaurant %}
+            <div class="res_item">
+               <a href="{{ dish.get_absolute_url }}"><div class="res_image"><img src="{{ dish.image.url }}" alt="{{ dish.name }}"></div></a> 
+                <div class="res_about">
+                    <p class="res_about_title">{{ dish.name }}</p>
+                    <p class="res_about_info">
+                        {{ dish.description }}
+                    </p>
+                </div>
+                
+                <div class="res_footer"><a href="{{ dish.get_absolute_url }}">explore &rarr;</a></div>
+            </div>
+
+            {% endfor %}
+
+           
+
+            
+            
+        </div>
+    </div>
+    
+ <div class="meeting">
+    <div class="restaurant_title"><a href="{% url "service:meeting" %}">MEETING</a>
+        <a href="{% url "service:meeting" %}" class="res_footer">more &rarr;</a>
+    </div>    <div class="meeting_image">
+        <a href="{% url "service:meeting" %}"><button>more</button></a>
+    </div>
+ </div>
+ <div class="wellness">
+
+    <div class="restaurant_title"><a href="{% url "service:wellness" %}">WELLNESS</a>
+    <a href="{% url "service:wellness" %}" class="res_footer">more &rarr;</a>
+</div>
+<div class="restourant_items">
+
+    
+
+    {% for act in act %}
+    <div class="res_item">
+       <a href="{{ act.get_absolute_url }}"><div class="res_image"><img src="{{ act.image.url }}" alt="{{ act.name }}"></div></a> 
+        <div class="res_about">
+          
+            <p class="res_about_title">{{ act.name }}</p>
+            <p class="res_about_info">
+                {{ act.description }}
+            </p>
+        </div>
+        <div class="res_footer"><a href="{{ act.get_absolute_url }}">explore &rarr;</a></div>
+    </div>
+
+{% endfor %}
+
+
+</div>
+ </div>
+ <div class="gallery">
+    <p class="gallery_title"><a href="{% url "service:event" %}">EVENTS</a> & <a href="{% url "service:gallery" %}">GALLERY</a> </p>
+    <div class="gallery_items">
+        
+
+        <div class="res_item">
+           <a href="{% url "service:event" %}"><div class="res_image"><img src="{{ event.first.image.url }}" alt="art"></div></a> 
+            <div class="res_about">
+                <p class="res_about_title"><a href="{% url "service:event" %}">EVENTS</a></p>
+                <p class="res_about_info">
+                    A series of diverse and entertaining cultural events with both local & international expert guests.</div>
+            <div class="res_footer"><a href="{% url "service:event" %}">explore &rarr;</a></div>
+        </div>
+
+        <div class="res_item">
+           <a href="{% url "service:gallery" %}"><div class="res_image"><img src="{% static 'service/images/gallery.jpg' %}" alt="gallery"></div></a> 
+            <div class="res_about">
+                <p class="res_about_title"><a href="{% url "service:gallery" %}">GALLERY</p></a>
+                <p class="res_about_info">
+                    Read more about The st.rayan, its fascinating history, vibrant surroundings, place in the Tel Aviv culinary scene and it’s passionate people.            </div>
+            <div class="res_footer"><a href="{% url "service:gallery" %}">explore &rarr;</div></a>
+        </div>
+
+    </div>
+ </div>
+{% endblock content %}

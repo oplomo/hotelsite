@@ -1,0 +1,46 @@
+{% load static %}
+
+<div class="co_parent">
+    <div class="contact">
+        <div class="ci adress"><span>Address:</span> <span>{{ hotel.address }}</span></div>
+        <div class="ci email"><span>Email:</span><span>{{ hotel.contact_email }}</span></div>
+        <div class="ci tel"><span>Phone Number:</span> <span>{{ hotel.contact_phone }}</span></div>
+        <div class="co_social">Social Media</div>
+        <div class="co_ic">
+            <div class="ic"><a href=""><i class="fa-brands fa-facebook"></i></a></div>
+            <div class="ic"><a href=""><i class="fa-brands fa-twitter"></i></a></div>
+            <div class="ic"><a href=""><i class="fa-brands fa-linkedin"></i></a></div>
+        </div>
+        <div class="co_social"><span>Our Location:</span> <span><i class="fa-solid fa-location-dot"></i></span></div>
+        <div class="loc">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.888130826597!2d36.998578273805414!3d-1.2372436355720495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f6bb93bad1d0b%3A0x4059bee2f57ae2a9!2sAmila%20Suites%20and%20Lounge!5e0!3m2!1sen!2ske!4v1722571692335!5m2!1sen!2ske"
+            width="400" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+           </iframe>
+        </div>
+    </div>
+
+    <div class="send">
+        <div class="co_social">Send Us a Message</div>
+        <form action="{% url 'service:contact_view' %}" method="POST">
+            {% csrf_token %}
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" value="{{ form.name.value }}" placeholder="Your Name" required>
+            <br>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" value="{{ form.email.value }}" placeholder="Your Email" required>
+            <br>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" value="{{ form.subject.value }}" placeholder="Subject" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your Message" required>{{ form.message.value }}</textarea>
+            <br>
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+</div>

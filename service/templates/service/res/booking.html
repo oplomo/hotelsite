@@ -1,0 +1,156 @@
+{% extends "service/base.html" %}
+{% load static %}
+
+{% block title %}
+    booking
+{% endblock title %}
+
+{% block content %}
+    <p class="navigation">
+        <span><a href="{% url "service:home" %}">HOME</a></span> >>
+        <span><a href="{% url "service:roomtype" %}">ROOMTYPES</a></span> >>
+        <span><a href="{% url "service:booking" %}">BOOKING</a></span>
+    </p>
+<div class="b_parent">
+    <div class="b_form">
+        <form method="post">
+            {% csrf_token %}
+    <!-- Start Date Field -->
+            <div>
+                <label for="id_start_date" style="color:black">Start Date:</label>
+                {{ form.start_date }}
+            </div>
+    <!-- End Date Field -->
+            <div>
+                <label for="id_end_date" style="color:black">End Date:</label>
+                {{ form.end_date }}
+            </div>
+    <!-- Room Type Field -->
+            <div>
+                <label for="id_room_type" style="color:black">Room Type:</label>
+                {{ form.room_type }}
+            </div>
+            <button type="submit">Check Availability</button>
+
+        </form>
+
+
+    </div>
+
+
+
+
+    <div class="major_info">
+        <div class="sta_guid">pick from the left form the check in date as the start date and check out date as end_date then click availability to see the rooms available for the dates picked, you can also filter by the room type</div>
+        <div class="sta_info">
+            <h1>ROOMS AVAILABLE FOR DATE {{ sd|upper }}</h1>
+            <h3 class="sta_r_t_type">
+                {{ typ|upper }} ROOMS
+            </h3>
+        </div>
+
+        {% if today %}
+            {% for room in today %}
+
+                <div class="station">
+                    <a href="{{ room.room.image.url }}" class="sta_image">
+                        <div>
+                            <img src="{{ room.room.image.url }}" alt="{{ room.number }}">
+                        </div>
+                    </a>
+                    <div class="sta_amn">
+                        <div class="sta_name">
+                            {{ room.room_type.name|upper }}---{{ room.room.number }}
+                            <hr>
+                        </div>
+                        <div class="sta_max">
+                            room amenities
+                            <hr>
+                        </div>
+                        <div class="sta_am">
+                            {% for ic in room.amenities %}
+                                <div class="sta_pt">
+                                    <div class="sta_ic_name">{{ ic.name }}</div>
+                                    <img src="{{ ic.icon.url }}" alt="{{ ic.name }} icon" style="width: 20px; height: 20px;background-color:black; padding:2px">
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="sta_price">
+                        <span class="money"> ksh {{ room.price }}</span>
+                        {% if room.room_type.name == "meeting" %}
+                            <form method="post" action="{% url "cart:cart_add" room.room.number %}">
+                                {% csrf_token %}
+
+                    <!-- Duration Field -->
+                                <div>
+                                    <label for="{{ form.duration.id_for_label }}">Duration</label>
+                                    {{ cart.duration }}
+                                </div>
+
+                    <!-- Number of Guests Field -->
+                                <div>
+                                    {{ cart.number_of_guest.as_hidden }}
+                                </div>
+
+                    <!-- Hidden Override Duration Field -->
+                                {{ cart.override_duration }}
+
+                    <!-- Hidden Override Number of Guests Field -->
+                                {{ cart.override_number_of_guest }}
+
+                                <div>
+                                    <label for="start_date">from:</label>
+                                    <input type="date" name="start_date" id="#" value="{{sd|date:'Y-m-d'}}"  readonly>
+                                </div>
+
+                                <div>
+                                    <label for="end_date">to:</label>
+                                    <input type="date" name="end_date" id="#" value="{{ed|date:'Y-m-d'}}" readonly>
+                                </div>
+
+                                <input type="submit" value="RESERVE" class="st_btn">
+                            </form>
+
+                        {% else %}
+                            <form action="{% url "cart:cart_add" room.room.number %}" method="post">
+                                {{ cart }}
+
+                                <div>
+                                    <label for="start_date">from:</label>
+                                    <input type="date" name="start_date" id="#" value="{{sd|date:'Y-m-d'}}" readonly>
+                                </div>
+
+                                <div>
+                                    <label for="end_date">to:</label>
+                                    <input type="date" name="end_date" id="#" value="{{ed|date:'Y-m-d'}}" readonly>
+                                </div>
+
+                                {% csrf_token %}
+                                <input type="submit" value="RESERVE" class="st_btn">
+                            </form>
+
+                        {% endif %}
+                    </div>
+                </div>
+
+            {% endfor %}
+
+
+
+        {% else %}
+            <div>
+                no room available for booking
+            </div>
+
+        {% endif %}
+
+    </div>
+</div>
+
+
+{% endblock content %}

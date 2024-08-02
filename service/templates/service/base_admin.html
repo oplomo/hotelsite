@@ -1,0 +1,55 @@
+{% comment %} {% load service_tags %} {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock  %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'service/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/1ca4691ddb.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="static/service/images/hotel_logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+
+</head>
+<body>
+   <div class="header">
+    
+  
+
+       <div class="menu adme">
+        
+
+        <div class="menu_item"><a href="{% url 'service:home' %}">HOME</a></div>
+        <div class="menu_item"><a href="">EMAILS AND NOTIFICATIONS</a></div>
+
+        <div class="menu_item"><a href="{% url 'admin:index' %}">ADMINISTRATION</a></div>
+
+       </div>      
+
+
+   </div>
+
+
+   {% if messages %}
+   <ul class="messages">
+     {% for message in messages %}
+       <li class="{{ message.tags }}">
+         {{ message|safe }}
+         <a href="#" class="close">x</a>
+       </li>
+     {% endfor %}
+   </ul>
+ {% endif %}
+
+   <div class="content">{% block content %}{% endblock content %}</div>
+  
+   <div class="footer">
+    <div class="ft_in">  you are in the admin page</div>
+  
+
+   </div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends "service/base_admin.html" %}
+{% load static %}
+
+{% block title %}
+  Administration
+{% endblock title %}
+
+{% block content %}
+
+<div class="email-form-container">
+    <h1>Compose an Email</h1>
+    <form method="post" action="{% url 'service:email_view' %}">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="email_subject">Subject:</label>
+            <input type="text" id="email_subject" name="email_subject" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email_content">Compose Email:</label>
+            <textarea id="email_content" name="email_content" class="form-control" rows="8" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="specific_user_email">Send to specific user:</label>
+            <input type="email" id="specific_user_email" name="specific_user_email" class="form-control" placeholder="user@example.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="send_to_all">Or send to all users:</label>
+            <input type="checkbox" id="send_to_all" name="send_to_all" value="true" class="form-checkbox">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Send" class="btn-submit">
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

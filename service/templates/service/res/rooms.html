@@ -1,0 +1,80 @@
+{% extends "service/base.html" %}
+{% load static %}
+
+{% block title %}
+  a room
+{% endblock title %}
+
+{% block content %}
+<p class="navi">
+  <span><a href="{% url "service:home" %}">HOME</a></span> >>
+  <span><a href="{% url 'service:'|add:name  %}">{{ name|upper }}</a></span> >>
+  <span><a href="{{ amn.get_absolute_url }}">{{ amn.name|upper }}</a></span>
+</p>
+  <h1 class="room_title">ROOMS UNDER {{ amn.name|upper }}</h2>
+<div class="bkk">
+  <form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit">Check Availability</button>
+</form>
+</div> 
+
+<div class="room">
+
+ 
+
+  {% for room in room %}
+  <div class="out_room">
+ 
+  <div class="room_no">
+    room number>>> {{ room.number }}
+  </div>
+   {% if room.is_available %}
+  <a href="{{ room.image.url }}"><div class="room_image">
+   <img src="{{ room.image.url }}" alt="">
+  </div></a>
+  {% else %}
+  <a href="{{ room.image.url }}"><div class="room_image not_ava">
+   <img src="{{ room.image.url }}" alt="">
+  </div></a>
+  {% endif %}
+ 
+ 
+  {% if room.is_available %}
+  <div class="available">
+   AVAILABLE
+  </div>
+  {% else %}
+  <div class="available">
+   <span class="nt_av">NOT AVAILABLE FOR BOOOKING</span>
+   <span class="block"><i class="fa-solid fa-ban"></i></span>
+  </div>
+  {% endif %}
+  </div>
+  
+  {% endfor %}
+  
+  
+
+ 
+ 
+ <div class="amenities">
+  <h3 class="amm_tit">amenities</h3>
+
+<div class="amn_hldr">
+{% for amn in amn.amenities.all %}
+   <div class="am_obj">
+  <div class="amn_name">{{ amn.name }}</div>
+  <img src="{{ amn.icon.url }}" alt="{{ amn.name }} icon" style="width: 20px; height: 20px;background-color:black; padding:2px">
+
+</div>
+
+{% endfor %}
+</div>
+</div>
+</div>
+
+{% endblock content %}
+
+

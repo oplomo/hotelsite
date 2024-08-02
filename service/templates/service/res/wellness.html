@@ -1,0 +1,46 @@
+{% extends "service/base.html" %}
+{% load static %}
+{% load service_tags %}
+
+{% block title %}
+ wellness
+{% endblock title %}
+
+{% block content %}
+<p class="navigation">
+    <span><a href="{% url "service:home" %}">HOME</a></span> >>
+    <span><a href="{% url "service:wellness" %}">WELLNESS</a></span>
+</p>
+
+<div class="p_restourant_info">
+    <p class="p_r_info_tittle">
+     WELLNESS
+    </p>
+    
+    <p class="p_r_info_about">
+        
+        Wellness is more than just a buzzword; it's a philosophy that encompasses the holistic well-being of mind, body, and spirit. In today's fast-paced world, prioritizing wellness has become essential for maintaining balance and vitality amidst the chaos of everyday life. It's about recognizing the interconnectedness of our physical, emotional, and mental health and taking proactive steps to nurture and nourish each aspect of ourselves.
+
+        At its core, wellness is about empowerment—the power to make conscious choices that support our health and happiness. It's about listening to our bodies, honoring our needs, and cultivating habits that promote vitality and longevity. Whether it's through regular exercise, nutritious eating, mindfulness practices, or simply finding moments of stillness in our busy lives, wellness is a journey of self-discovery and self-care.
+        
+        But wellness is also about community and connection. It's about coming together to support and uplift one another on our individual paths to well-being. Whether it's through shared workouts, healthy meals, or simply lending an empathetic ear, the journey to wellness is made richer and more meaningful when undertaken with others by our side.
+        
+        Ultimately, wellness is a deeply personal journey, unique to each individual. It's about finding what works best for you and embracing practices that resonate with your values and aspirations. Whether you're embarking on a new fitness routine, exploring mindfulness meditation, or simply taking time to rest and recharge, remember that every small step towards wellness is a step towards a brighter, healthier, and more vibrant future.    </p>
+ </div>
+
+ <div class="p_restaurant_items">
+     
+    {% for well in activity %}
+        <div class="p_r_image">
+             <div class="p_r_image_title">
+                <a href="{{ well.get_absolute_url }}">{{ well.name }}</a>
+             </div>
+
+             <a href="{{ well.get_absolute_url }}" class="image_link">
+                <div class="p_r_image_item">
+                 <img src="{{ well.image.url }}" alt="{{ well.name }}">
+             </div>
+            </a>
+        </div>
+ {% endfor %}
+{% endblock content %}

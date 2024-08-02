@@ -1,0 +1,30 @@
+{% extends "service/base.html" %}
+{% load static %}
+{% load service_tags %}
+
+{% block title %}about_us{% endblock title %}
+{% block content %}
+<p class="navi">
+    <span><a href="{% url "service:home" %}">HOME</a></span> >>
+    <span><a href="{% url "service:about" %}">ABOUT</a></span>
+</p>
+
+
+<div class="about_info">
+    <p class="about_text">
+        ABOUT THE {{ hotel.name|upper }}
+    </p>
+</div>
+
+<p class="about_text">
+    {{ hotel.description|markdown }}
+</p>
+<div class="about_contact">
+ <p class="a_contact_info">
+    CONTACT INFORMATION
+ </p>
+ {% include "service/card.html" %}
+
+</div>
+
+{% endblock content %}

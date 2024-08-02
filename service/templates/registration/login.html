@@ -1,0 +1,39 @@
+{% extends "service/base.html" %}
+{% load static %}
+{% block title %}login{% endblock title %}
+
+{% block content %}
+
+<div class="parent_log">
+  <div class="child_log">
+{% if form.errors %}
+<p class="log_warn">
+  Your username and password didn't match.
+  Please try again.
+</p>
+
+{% endif %}
+<p class="log_p">
+   <span class="log_p">use the form below to log in</span> 
+</p>
+
+<form action="{% url "login" %}" method="POST">
+ {{ form.as_p }}
+ {% csrf_token %}
+ <input type="hidden" name="next" value="{{ next }}"/>
+ <p><input type="submit" value="log in" class="log_reg"></p>  
+ <p>
+      <span class="log_p">Forgotten your password?</span><br> <br>
+    <a href="{% url "password_reset" %}" class="log_reg">reset password</a>. 
+  </p>
+
+  <p>
+    <span class="log_p">
+    you dont have an account? </span> <br> <br>
+    <a href="{% url "service:register" %}" class="log_reg">register here</a>. 
+  </p>
+
+</form>
+</div>
+</div>
+{% endblock content %}

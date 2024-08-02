@@ -1,0 +1,23 @@
+{% extends "service/base.html" %}
+{% load static %}
+
+{% block title %}
+edit profile
+{% endblock title %}
+{% block content %}
+
+<div class="parent_log">
+  <div class="child_log">
+
+<h1>Edit your account</h1>
+<p class="log_p">You can edit your account using the following form:</p>
+<form method="post" enctype="multipart/form-data">
+  {{ user_form.as_p }}
+  {% comment %} {{ profile_form.as_p }} {% endcomment %}
+  {% csrf_token %}
+  <p><input type="submit" value="Save changes" class="log_reg"></p>
+</form>
+
+</div>
+</div>
+{% endblock content %}

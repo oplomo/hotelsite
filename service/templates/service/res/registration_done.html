@@ -1,0 +1,24 @@
+{% extends "service/base.html" %}
+{% load static %}
+
+{% block title %}
+registranion done
+{% endblock title %}
+
+{% block content %}
+<div class="parent_log">
+  <div class="child_log">
+<h1>Welcome {{ new_user.first_name }}!</h1>
+  <p>
+    <h1>your username is <span class="log_warn">{{ name }}</span></h1>
+   
+  </p>
+  <form action="{% url "login" %}" method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}"/>
+    <p><input type="submit" value="log in" class="log_reg"></p>  
+   
+</div>
+</div>
+{% endblock content %}

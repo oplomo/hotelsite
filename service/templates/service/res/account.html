@@ -1,0 +1,106 @@
+{% extends "service/base.html" %}
+{% load static %}
+{% load service_tags %}
+
+{% block title %}
+  profile
+{% endblock title %}
+
+{% block content %}
+  {% for hotel in hotel %}
+    <h2 class="acc_int">{{ hotel.name }} WELCOMES <span class="name">{{ request.user.first_name|upper }}</span></h2>
+  {% endfor %}
+
+  <div class="acc_manage">
+    <div class="ac_logout">
+      <form action="{% url "logout"%}" method="POST">
+        <input type="submit" value="LOGOUT" class="log_reg">
+        {% csrf_token %}
+      </form>
+    </div>
+
+
+
+    <a href="{% url "service:edit" %}" class="log_reg">edit profile</a>
+
+    <a href="{% url "password_change" %}" class="log_reg">change password</a>
+
+    <button class="log_reg" onclick="showrem()"> REMINDERS
+    </button>
+  </div>
+
+  <div class="rmbook">
+
+
+    <div class="chumba">
+      <p class="acc_rem_title">ROOMS YOU  HAVE BOOKED</p>
+      {% if book %}
+        <table class="account_booking">
+          <thead>
+            <tr>
+              <th>room image</th>
+              <th>room name</th>
+              <th> wifi password</th>
+              <th>check-in date </th>
+              <th>check-out-date</th>
+              <th>price</th>
+              <th>payment status</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            {% for book in book %}
+
+              <tr>
+                <td><img src="{{ book.room.image.url }}" alt="{{ book.room.name }}" style="width: 20vw; height: 30vh;"></td>
+                <td>{{ book.room.number }}</td>
+                <td>Rayan44@hotel</td>
+                <td>{{ book.check_in_date|date:'Y/m/d' }}</td>
+                <td>{{ book.check_out_date|date:'Y/m/d' }} </td>
+                <td>{{ book.total_price }}</td>
+                <td>{{ book.payment_status }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+      {% else %}
+        <div class="say">YOU HAVENT BOOK A ROOM YET <br> <br><a href="{% url "service:booking" %}" class="log_reg">book now</a></div>
+      {% endif %}
+    </div>
+
+
+
+
+
+
+    <div class="acc_reminder" id="bigshow">
+      <p class="acc_rem_title">REMINDERS</p>
+      <div class="acc_rem_holder">
+        {% if rmb %}
+          {% for alarm  in rmb %}
+            <div class="alarm_info">
+              <div class="alarm_item">{{ alarm.event }}</div>
+ {% comment %} <div class="alarm_item">{{ alarm.booking }}</div> {% endcomment %}
+              <div class="alarm_item">{{ alarm.reminder_time }}</div>
+              <div class="alarm_item">
+                <form action=" {% url "service:delete_r" alarm.id %}" method="post">
+                  {% csrf_token %}
+                  <input type="submit" value="DELETE">
+                </form>
+              </div>
+            </div>
+
+          {% endfor %}
+        {% else %}
+          <div class="say">no event reminder set</div>
+        {% endif %}
+
+      </div>
+    </div>
+
+
+
+{% endblock content %}

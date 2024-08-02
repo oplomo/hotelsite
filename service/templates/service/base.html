@@ -1,0 +1,327 @@
+{% comment %} {% load service_tags %} {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock  %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'service/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/1ca4691ddb.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="static/service/images/hotel_logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+
+</head>
+<body>
+   <div class="header">
+    
+    <div class="menu_item floater_menu">
+
+        {% if user.is_staff %}
+     
+        <div><a href="{% url "service:admin" %}"> GO TO ADMIN PAGE</a></div>
+        {% endif %}
+
+        <div>  {% with total_items=cart|length %}
+        {% if total_items > 0 %}
+         <span class="res_room"> rooms reserved:
+          <a href="{% url "cart:cart_detail" %}">
+            {{ total_items }} room{{ total_items|pluralize }},
+            ${{ cart.get_total_price }}
+          </a> </span>
+        {% else %}
+        <span class="res_room"> <a href="{% url "service:booking" %}"> NO room reserved yet</a></span>
+        {% endif %}
+      {% endwith %}</div>  
+
+    </div>
+
+       <div class="menu">
+        
+<div class="rich_m">
+    <div class="header-icon" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <a href="{% url "service:home" %}"><div class="menu_item"><img src="{% static 'service/images/hotel_logo.jpg' %}" alt="logo" class="header_logo"></div></a>
+
+</div>
+
+<div class="nav_men">
+        <div class="menu_item"><a href="{% url 'service:restaurant' %}">RESTOURANT & BAR</a></div>
+        <div class="menu_item"><a href="{% url 'service:roomtype' %}">ROOMS & SUITES</a></div>
+        <div class="menu_item"><a href="{% url 'service:meeting' %}">MEETING</a></div>
+        <div class="menu_item"><a href="{% url "service:about" %}">ABOUT</a></div>
+        <div class="menu_item"><a href="{% url 'service:event' %}">EVENTS</a></div>
+        <div class="menu_item"><a href="{% url "service:gallery" %}">GALLERY</a></div>
+        <div class="menu_item"><a href="{% url 'service:booking' %}">BOOK NOW</a></div>
+
+        
+
+
+       
+        {% if request.user.is_authenticated %}
+        <div class="menu_item"><a href="{% url "service:account" %}">my profile <br><i class="fa-solid fa-user"></i></a></div>
+
+        {% else %}
+        <div class="menu_item"><a href="{% url "login" %}">LOGIN<br><i class="fa-solid fa-user"></i></a></div>
+
+        {% endif %}
+       </div>
+
+       
+    </div>
+       <div class="sidebar" id="sidebar">
+        <button class="exit-button" onclick="toggleSidebar()">X</button>
+        <nav>
+            <ul>
+                <li><a href="{% url "service:home" %}">HOME</a></li>
+                <li><a href="{% url "service:restaurant" %}">RESTAURANT & BAR</a></li>
+                <li><a href="{% url "service:roomtype" %}">ROOMS</a></li>
+                <li><a href="{% url "service:meeting" %}">MEETING</a></li>
+                <li><a href="{% url "service:gallery" %}">GALLERY</a></li>
+                <li><a href="{% url "service:wellness" %}">WELLNESS</a></li>
+                <li><a href="{% url "service:event" %}">EVENTS</a></li>
+                <li><a href="{% url "service:booking" %}">BOOK ROOM</a></li>
+
+                {% if request.user.is_authenticated %}
+                <li>
+                    <form action="{% url "logout"%}" method="POST">
+                      <input type="submit" value="LOGOUT">
+                      {% csrf_token %}
+                    </form>
+                 </li>
+                {% else %}
+                <li><a href="{% url "login" %}">LOG IN</a></li>
+
+                {% endif %}
+
+                <li><a href="{% url "service:about" %}">ABOUT</a></li>
+                <li><a href="#c_ftr">CONTACT</a></li>
+            </ul>
+        </nav>
+    </div>
+   </div>
+
+
+   {% if messages %}
+   <ul class="messages">
+     {% for message in messages %}
+       <li class="{{ message.tags }}">
+         {{ message|safe }}
+         <a href="#" class="close">x</a>
+       </li>
+     {% endfor %}
+   </ul>
+ {% endif %}
+
+   <div class="content">{% block content %}{% endblock content %}</div>
+   
+   <div class="footer" id="c_ftr">
+      <div class="footer_menu">
+         <div class="footer_item imftr"><img src=" {% static 'service/images/hotel_logo.jpg' %}" alt="logo" class="footer_logo"></div>
+         <div class="footer_item footer_contact_info">
+            <p class="co_in">CONTACT INFORMATION</p>
+            <ul>
+                {% for hotel in details %}
+                <li class="info">{{ hotel.name }}</li>
+                <li class="info">{{ hotel.address }}</li>
+                <li class="info">{{ hotel.contact_email }}</li>
+                <li class="info">{{ hotel.contact_phone }}</li>
+                <li class="info"><a href="https://{{ hotel.facebook }}" target="blank">facebook <span><i class="fa-brands fa-facebook"></i></span></a></li>
+                <li class="info"><a href="https://{{ hotel.instagram }}" target="blank">instagram <span><i class="fa-brands fa-square-instagram"></i></span></a></li>
+                <li class="info"><a href="https://{{ hotel.twitter }}" target="blank">twitter <span><i class="fa-brands fa-twitter"></i></span></a></li>
+                {% endfor %}
+            </ul>
+           
+         </div>
+         <div class="footer_item footer_hotel_menu">
+            <p class="footer_hotel_menu_title"><a href="{% url "service:home" %}">THE HOTEL:</a></p>
+            <div class="footer_hotel_menu_item"><a href="{% url "service:restaurant" %}">RESTOURANT & BAR</a></div>
+            <div class="footer_hotel_menu_item"><a href="{% url "service:roomtype" %}">ROOMS</a></div>
+            <div class="footer_hotel_menu_item"><a href="{% url "service:meeting" %}">MEETING</a></div>
+            <div class="footer_hotel_menu_item"><a href="{% url "service:gallery" %}">GALLERY</a></div>
+            <div class="footer_hotel_menu_item"><a href="{% url "service:wellness" %}">WELLNESS</a></div>
+            <div class="footer_hotel_menu_item"><a href="{% url "service:event" %}">EVENTS</a></div>
+            <div class="footer_hotel_menu_item"><a href="{% url "service:booking" %}">BOOK NOW</a></div>
+
+            {% if request.user.is_authenticated %}
+                <div>
+                    <form action="{% url "logout"%}" method="POST">
+                      <input type="submit" value="LOGOUT">
+                      {% csrf_token %}
+                    </form>
+                </div>
+                {% else %}
+                <div><a href="{% url "login" %}">LOG IN</a></div>
+
+                {% endif %}
+                <div class="footer_hotel_menu_item"><a href="{% url "service:about" %}">ABOUT US</a></div>
+
+        
+        </div>
+          <div class="footer_item icftr">
+            <p class="title">FOLLOW US</p>
+            <div class="social_icons">
+                <div class="icon"><a href=""><i class="fa-brands fa-facebook"></i></a></div>
+                <div class="icon"><a href=""><i class="fa-brands fa-twitter"></i></a></div>
+                <div class="icon"><a href=""><i class="fa-brands fa-linkedin"></i></a></div>
+                <div class="icon"><a href=""><i class="fa-brands fa-square-instagram"></i></a></div>
+            </div>
+         </div> 
+      </div>
+    <div class="last_info">
+        <div class="last_menu">&copy 2024 {{ details.first }} designed by adams;</div>
+        <div class="last_menu">privacy policy</div>
+    </div>
+   </div> 
+
+
+   {% comment %} <div class="text" >
+    <i class="fa-solid fa-cart-shopping" onclick="openPopUp()"></i>
+   </div>
+
+<div class="pop" id="up">
+    <div class="ee" id="xx" onclick="hidePopUP()">&cross;</div>
+    <p>your cart is empty</p>  
+</div> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        if (sidebar.style.left === "0px") {
+            sidebar.style.left = "-350px"; // Hide sidebar
+        } else {
+            sidebar.style.left = "0px"; // Show sidebar
+        }
+    }
+    
+    
+</script>
+
+
+<script>
+    sap = document.getElementById('up');
+    function openPopUp() {
+        sap.classList.add('open');
+    }
+
+    function hidePopUP() {
+        sap.classList.remove('open')
+    }
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+
+        },<!--for aouto,,if you dont want then delete the delay and the disableOnInteraction keys-->
+
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+    }); 
+</script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    const gridContainer = document.querySelector('.gallery_images');
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    let currentPage = 1;
+    const itemsPerPage = 12; // 4 columns * 2 rows = 8 items
+
+    function showPage(pageNumber) {
+        const startIndex = (pageNumber - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const gridItems = Array.from(gridContainer.children);
+        gridItems.forEach((item, index) => {
+            if (index >= startIndex && index < endIndex) {
+                item.style.display = 'grid'; // Display grid item
+            } else {
+                item.style.display = 'none'; // Hide grid item
+            }
+        });
+    }
+
+    function nextPage() {
+        const totalPages = Math.ceil(gridContainer.children.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
+        }
+        else{
+            alert("the end")
+        }
+    
+    }
+
+    function prevPage() {
+        currentPage--;
+        if (currentPage < 1) {
+            currentPage = 1;
+        }
+        showPage(currentPage);
+    }
+
+    // Initial display
+    showPage(currentPage);
+
+    // Event listeners for pagination controls
+    nextBtn.addEventListener('click', nextPage);
+    prevBtn.addEventListener('click', prevPage);
+});
+
+</script>
+
+
+<script>
+
+    function showrem(){
+        remm = document.getElementById("bigshow")
+        remm.style.display="block";
+    }
+</script>
+   
+
+
+
+
+
+  
+</body>
+</html>

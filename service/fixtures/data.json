@@ -1,0 +1,681 @@
+[
+{
+  "model": "service.hotel",
+  "pk": 1,
+  "fields": {
+    "name": "SAINT.RAYAN HOTEL",
+    "description": "** Saint Rayan Hotel **  is an elegant sanctuary nestled in the heart of a bustling city, exuding sophistication and charm at every turn. Its facade, adorned with intricate architectural details, invites guests into a world of timeless luxury and unparalleled hospitality.\r\n\r\nUpon entering the lobby, guests are greeted by a harmonious blend of modern design and classic elegance. The grand chandeliers cast a warm glow over plush furnishings, creating an atmosphere of refined comfort. The scent of fresh flowers permeates the air, adding a touch of tranquility to the bustling surroundings.\r\n\r\nThe guest rooms at Saint Rayan Hotel are meticulously designed to provide the utmost comfort and relaxation. Each room is tastefully decorated with luxurious fabrics, elegant furnishings, and modern amenities. From cozy single rooms to spacious suites, every accommodation offers a serene retreat from the outside world.\r\n\r\nDining at Saint Rayan Hotel is a culinary journey of indulgence and sophistication. The hotel boasts multiple restaurants and bars, each offering a unique gastronomic experience. Guests can savor exquisite international cuisine prepared with the finest ingredients, accompanied by an extensive selection of wines and spirits.\r\n\r\nFor those seeking relaxation and rejuvenation, Saint Rayan Hotel offers an array of wellness facilities. The spa provides a haven of serenity, where guests can indulge in a variety of rejuvenating treatments and therapies. The fitness center is equipped with state-of-the-art equipment, allowing guests to maintain their wellness routine while traveling.\r\n\r\nSaint Rayan Hotel also caters to business travelers with its well-appointed meeting and event spaces. Whether hosting a corporate conference or a lavish wedding reception, the hotel's professional staff ensure every event is executed flawlessly, leaving a lasting impression on guests.\r\n\r\nWith its impeccable service, luxurious accommodations, and unparalleled amenities, Saint Rayan Hotel sets the standard for refined hospitality, promising an unforgettable stay for every guest.",
+    "address": "p.o box 344-8967",
+    "contact_email": "adams.square@yahoo.com",
+    "contact_phone": "0794394533",
+    "facebook": "facebook.com",
+    "instagram": "instagram.com",
+    "twitter": "twitter.com"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 1,
+  "fields": {
+    "name": "wifi",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-wi-fi-48.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 2,
+  "fields": {
+    "name": "tv",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-tv-50.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 3,
+  "fields": {
+    "name": "coffee maker",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-coffee-50.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 4,
+  "fields": {
+    "name": "air conditioner",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-central-air-conditioning-50.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 5,
+  "fields": {
+    "name": "working desk",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-desk-50.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 6,
+  "fields": {
+    "name": "iron box",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-iron-50.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 7,
+  "fields": {
+    "name": "writting board",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-board-64.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 8,
+  "fields": {
+    "name": "sorrounding  view",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-building-50.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 9,
+  "fields": {
+    "name": "towel",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-towel-50.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 10,
+  "fields": {
+    "name": "playing arena",
+    "description": "for children",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-playing-children-48.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 11,
+  "fields": {
+    "name": "braille",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-braille-64.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 12,
+  "fields": {
+    "name": "pet bed",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-pet-bed-64.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 13,
+  "fields": {
+    "name": "pet bowl",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-pet-bowl-64.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 14,
+  "fields": {
+    "name": "bed",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-bed-50.png"
+  }
+},
+{
+  "model": "service.amenity",
+  "pk": 15,
+  "fields": {
+    "name": "wheelchair",
+    "description": "",
+    "is_available": true,
+    "icon": "amenities/icons/icons8-wheelchair-50.png"
+  }
+},
+{
+  "model": "service.roomtype",
+  "pk": 1,
+  "fields": {
+    "name": "suite",
+    "description": "More spacious than standard and deluxe rooms.\r\nIncludes separate living and sleeping areas.\r\nOften features luxury amenities and may come with multiple bedrooms and bathrooms.",
+    "capacity": 6,
+    "price": "6000.00",
+    "image": "roomtype_images/suite.jpeg",
+    "amenities": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  }
+},
+{
+  "model": "service.roomtype",
+  "pk": 2,
+  "fields": {
+    "name": "meeting",
+    "description": "Welcome to our luxurious meeting room, where business meets comfort and sophistication. Designed to accommodate a variety of corporate events, presentations, and conferences, our meeting room offers the perfect blend of functionality and elegance.",
+    "capacity": 150,
+    "price": "10000.00",
+    "image": "roomtype_images/mtn4.jpeg",
+    "amenities": [
+      1,
+      2,
+      4,
+      7,
+      11,
+      15
+    ]
+  }
+},
+{
+  "model": "service.roomtype",
+  "pk": 3,
+  "fields": {
+    "name": "executive",
+    "description": "Step into sophistication and professionalism in our Executive Meeting Room, where every detail is tailored to elevate your business gatherings. Designed for discerning executives and corporate events, our executive meeting room offers a refined setting that seamlessly combines functionality with luxury.",
+    "capacity": 2,
+    "price": "4000.00",
+    "image": "roomtype_images/executive.jpeg",
+    "amenities": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      14
+    ]
+  }
+},
+{
+  "model": "service.roomtype",
+  "pk": 4,
+  "fields": {
+    "name": "standard",
+    "description": "Indulge in comfort and convenience in our Standard Room, designed to offer a relaxing retreat for travelers seeking a cozy and inviting accommodation. at a maximum of 3, get to choose the number of guest in the room to regulate the price, our Standard Room provides all the essential amenities for a memorable stay.",
+    "capacity": 4,
+    "price": "1500.00",
+    "image": "roomtype_images/standard.jpeg",
+    "amenities": [
+      1,
+      4,
+      9,
+      10,
+      11,
+      14,
+      15
+    ]
+  }
+},
+{
+  "model": "service.roomtype",
+  "pk": 5,
+  "fields": {
+    "name": "deluxe",
+    "description": "Experience luxury and sophistication in our Deluxe Room, meticulously designed to exceed your expectations and provide an unforgettable stay. With a perfect blend of comfort, style, and modern amenities, our Deluxe Room offers a lavish retreat for discerning travelers seeking a premium accommodation experience.",
+    "capacity": 2,
+    "price": "5000.00",
+    "image": "roomtype_images/del1.jpeg",
+    "amenities": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      9,
+      12,
+      13,
+      14,
+      15
+    ]
+  }
+},
+{
+  "model": "service.room",
+  "pk": 1,
+  "fields": {
+    "number": "D100",
+    "room_type": 5,
+    "hotel": 1,
+    "beds": 1,
+    "image": "room_images/del1.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 2,
+  "fields": {
+    "number": "D101",
+    "room_type": 5,
+    "hotel": 1,
+    "beds": 2,
+    "image": "room_images/del2.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 3,
+  "fields": {
+    "number": "D102",
+    "room_type": 5,
+    "hotel": 1,
+    "beds": 2,
+    "image": "room_images/del3.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 4,
+  "fields": {
+    "number": "M100",
+    "room_type": 2,
+    "hotel": 1,
+    "beds": 0,
+    "image": "room_images/mtn1.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 5,
+  "fields": {
+    "number": "M101",
+    "room_type": 2,
+    "hotel": 1,
+    "beds": 0,
+    "image": "room_images/mtn2.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 6,
+  "fields": {
+    "number": "M102",
+    "room_type": 2,
+    "hotel": 1,
+    "beds": 0,
+    "image": "room_images/mtn3.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 7,
+  "fields": {
+    "number": "M103",
+    "room_type": 2,
+    "hotel": 1,
+    "beds": 0,
+    "image": "room_images/mtn4.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 8,
+  "fields": {
+    "number": "SU100",
+    "room_type": 1,
+    "hotel": 1,
+    "beds": 3,
+    "image": "room_images/sui1.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 9,
+  "fields": {
+    "number": "SU101",
+    "room_type": 1,
+    "hotel": 1,
+    "beds": 2,
+    "image": "room_images/sui2.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 10,
+  "fields": {
+    "number": "SU102",
+    "room_type": 1,
+    "hotel": 1,
+    "beds": 3,
+    "image": "room_images/sui3.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 11,
+  "fields": {
+    "number": "E100",
+    "room_type": 3,
+    "hotel": 1,
+    "beds": 1,
+    "image": "room_images/ex1.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 12,
+  "fields": {
+    "number": "E101",
+    "room_type": 3,
+    "hotel": 1,
+    "beds": 2,
+    "image": "room_images/executive.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 13,
+  "fields": {
+    "number": "ST100",
+    "room_type": 4,
+    "hotel": 1,
+    "beds": 1,
+    "image": "room_images/st1.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 14,
+  "fields": {
+    "number": "ST101",
+    "room_type": 4,
+    "hotel": 1,
+    "beds": 3,
+    "image": "room_images/st2.jpeg"
+  }
+},
+{
+  "model": "service.room",
+  "pk": 15,
+  "fields": {
+    "number": "ST102",
+    "room_type": 4,
+    "hotel": 1,
+    "beds": 2,
+    "image": "room_images/standard.jpeg"
+  }
+},
+{
+  "model": "service.event",
+  "pk": 1,
+  "fields": {
+    "name": "music night",
+    "description": "Get ready to groove to the rhythm of live music at our Music Night extravaganza! Immerse yourself in the soulful melodies, infectious beats, and electrifying performances by talented musicians and bands. From jazz and blues to pop and rock, there's a genre for every music lover to enjoy. Sip on handcrafted cocktails, indulge in delectable bites, and dance the night away in our vibrant and intimate setting. With an eclectic lineup of artists and an unforgettable atmosphere, our Music Night promises an evening of pure musical bliss.",
+    "date": "2024-05-26",
+    "start_time": "06:00:00",
+    "end_time": "18:00:00",
+    "location": "st.rayan hotel",
+    "image": "event_images/music.jpg",
+    "organiser": "st.rayan hotel",
+    "entry": "ksh 500"
+  }
+},
+{
+  "model": "service.event",
+  "pk": 2,
+  "fields": {
+    "name": "disco night",
+    "description": "Get ready to dance the night away at our electrifying Disco event! Step back in time to the era of glittering disco balls, funky beats, and iconic dance moves. Our Disco night promises a nostalgic journey filled with groovy tunes, flashy lights, and a vibrant atmosphere that will transport you straight to the dance floors of the 70s and 80s.\r\n\r\nPut on your dancing shoes and unleash your inner John Travolta or Donna Summer as our DJ spins all the classic hits that defined the disco era. From \"Stayin' Alive\" to \"I Will Survive,\" get ready to boogie down and strut your stuff alongside fellow disco enthusiasts.\r\n\r\nWhether you're a seasoned disco diva or a first-time disco dancer, everyone is welcome to join the party! So grab your friends, don your most dazzling disco attire, and prepare for a night of non-stop fun and infectious energy at Saint Rayan Hotel's Disco extravaganza.",
+    "date": "2024-05-11",
+    "start_time": "18:00:00",
+    "end_time": "06:00:00",
+    "location": "st.rayan hotel",
+    "image": "event_images/disco.jpg",
+    "organiser": "nrg radio",
+    "entry": "a bottle of wine"
+  }
+},
+{
+  "model": "service.event",
+  "pk": 3,
+  "fields": {
+    "name": "motivational talk",
+    "description": "Empower yourself with inspiration and motivation at our enlightening Motivational Talk event! Join us as we welcome esteemed speakers and motivational coaches who will share their wisdom, insights, and personal journeys to success. From overcoming challenges to achieving goals, cultivating resilience to unlocking your full potential, our speakers will ignite your passion and drive for personal and professional growth. Whether you're seeking guidance, seeking clarity, or simply seeking inspiration, this event will empower you to reach new heights and seize every opportunity that comes your way.",
+    "date": "2024-08-03",
+    "start_time": "12:00:00",
+    "end_time": "00:00:00",
+    "location": "st.rayan hotel",
+    "image": "event_images/motivation.jpg",
+    "organiser": "mr. oplomo",
+    "entry": "ksh 1000"
+  }
+},
+{
+  "model": "service.event",
+  "pk": 4,
+  "fields": {
+    "name": "gaming night",
+    "description": "Join us for an exhilarating evening of virtual adventures and friendly competition at our Gaming Night! Whether you're a seasoned gamer or just looking to unwind with some fun, there's something for everyone. Test your skills in popular multiplayer games, challenge your friends to a match, or simply enjoy the lively atmosphere. With state-of-the-art gaming consoles, comfortable seating, and refreshments on hand, it's guaranteed to be a night to remember.",
+    "date": "2024-05-09",
+    "start_time": "18:00:00",
+    "end_time": "00:00:00",
+    "location": "st.rayan hotel",
+    "image": "event_images/gamming.jpg",
+    "organiser": "kenya gamers",
+    "entry": "ksh2000"
+  }
+},
+{
+  "model": "service.event",
+  "pk": 5,
+  "fields": {
+    "name": "technology talk",
+    "description": "Calling all tech enthusiasts and innovators! Join us for an insightful Tech Talk event where industry experts and thought leaders gather to discuss the latest trends, innovations, and breakthroughs shaping the world of technology. From artificial intelligence to cybersecurity, digital transformation to the future of work, our panel of speakers will provide valuable insights and engaging discussions. Whether you're a seasoned professional or simply curious about the ever-evolving tech landscape, this event is not to be missed.",
+    "date": "2024-05-14",
+    "start_time": "18:00:00",
+    "end_time": "06:00:00",
+    "location": "st.rayan hotel",
+    "image": "event_images/technology.jpg",
+    "organiser": "mr&mrs. square",
+    "entry": "student id"
+  }
+},
+{
+  "model": "service.event",
+  "pk": 6,
+  "fields": {
+    "name": "new month celebration",
+    "description": "Let's welcome the new month in style with a festive celebration at Saint Rayan Hotel! Join us as we raise a toast to new beginnings, promising opportunities, and unforgettable memories. Enjoy live music, delectable cuisine, and signature cocktails as we mark the start of a fresh chapter together. Whether you're catching up with friends, networking with fellow guests, or simply soaking in the vibrant atmosphere, our New Month Celebration promises to kickstart your month on a high note.",
+    "date": "2024-05-01",
+    "start_time": "00:00:00",
+    "end_time": "12:00:00",
+    "location": "st.rayan hotel",
+    "image": "event_images/art.jpg",
+    "organiser": "st.rayan hotel",
+    "entry": "free"
+  }
+},
+{
+  "model": "service.restaurant",
+  "pk": 1,
+  "fields": {
+    "name": "Flame & Sizzle Grillhouse:",
+    "description": "Indulge your senses in a culinary adventure at Flame & Sizzle Grillhouse, where the aroma of perfectly seared meats fills the air and the ambiance is as warm as the grill. From succulent steaks to mouthwatering seafood, every dish is expertly prepared to tantalize your taste buds and satisfy your cravings. Whether you're a carnivore connoisseur or simply seeking a hearty meal, our grillhouse promises an unforgettable dining experience that's sure to leave you craving more.",
+    "image": "restaurant_images/grill.jpeg",
+    "about": "Welcome to Flame & Sizzle Grillhouse, the culinary crown jewel of Saint Rayan Hotel. Nestled within the heart of our luxurious establishment, Flame & Sizzle Grillhouse invites you on a gastronomic journey like no other.\r\n\r\nStep into our vibrant grillhouse and be greeted by the enticing aroma of sizzling meats, the warm glow of the open flames, and the inviting ambiance that sets the stage for an unforgettable dining experience. Here, we celebrate the timeless art of grilling, where each dish is crafted with passion, precision, and a touch of culinary mastery.\r\n\r\nOur menu boasts an impressive selection of prime cuts, succulent seafood, and farm-fresh produce, all expertly prepared to perfection on our custom-built grills. From tender steaks charred to perfection to plump, juicy burgers bursting with flavor, every bite at Flame & Sizzle Grillhouse is a testament to our commitment to quality and excellence.\r\n\r\nBut our grillhouse is more than just a destination for exceptional food—it's a place where friends and family come together to create cherished memories. Whether you're celebrating a special occasion, catching up with old friends, or simply treating yourself to a night out, our attentive staff and welcoming atmosphere ensure that every visit is nothing short of extraordinary.\r\n\r\nSo come, join us at Flame & Sizzle Grillhouse and experience the magic of the grill like never before. Indulge your senses, delight your palate, and embark on a culinary adventure that will leave you craving more.",
+    "opening": "18:00:00",
+    "closing": "00:00:00"
+  }
+},
+{
+  "model": "service.restaurant",
+  "pk": 2,
+  "fields": {
+    "name": "La Grande Soirée",
+    "description": "Experience an unforgettable evening of culinary excellence at La Grande Soirée, where every dish is a symphony of flavor and every moment is an occasion to celebrate. From elegant appetizers to decadent desserts, our menu is crafted with care and precision, showcasing the finest ingredients and culinary techniques from around the world. Whether you're dining with loved ones or hosting a special event, our exquisite cuisine, impeccable service, and luxurious ambiance ensure that every meal at La Grande Soirée is an affair to remember",
+    "image": "restaurant_images/dinning.jpeg",
+    "about": "Welcome to La Grande Soirée, the epitome of elegance and culinary excellence at Saint Rayan Hotel. Nestled within our luxurious establishment, La Grande Soirée beckons you into a world of sophistication, where every moment is an exquisite celebration of fine dining.\r\n\r\nAs you step into our opulent dining space, you'll be enveloped in an ambiance of refined luxury, where sparkling chandeliers cast a soft glow over sumptuous furnishings and tasteful decor. Here, amidst an atmosphere of timeless charm and sophistication, we invite you to indulge in a culinary journey like no other.\r\n\r\nOur menu at La Grande Soirée is a symphony of flavor and innovation, curated by our team of talented chefs who draw inspiration from the rich tapestry of global cuisine. From delicate appetizers to decadent desserts, each dish is meticulously crafted using the finest ingredients sourced from local producers and artisanal purveyors.\r\n\r\nBut La Grande Soirée is more than just a restaurant—it's a destination for creating cherished memories and unforgettable experiences. Whether you're marking a special occasion, hosting a private event, or simply seeking an evening of unparalleled indulgence, our attentive staff and impeccable service ensure that every moment is nothing short of extraordinary.\r\n\r\nSo come, elevate your dining experience to new heights at La Grande Soirée. Immerse yourself in the artistry of fine cuisine, savor the magic of exceptional flavors, and embark on a culinary adventure that will tantalize your senses and leave you longing for more.",
+    "opening": "12:00:00",
+    "closing": "00:00:00"
+  }
+},
+{
+  "model": "service.restaurant",
+  "pk": 3,
+  "fields": {
+    "name": "mixology lab",
+    "description": "Enter a world of creative concoctions and bold flavors at Mixology Lab, where cocktail craftsmanship meets experimental flair. Our expert mixologists push the boundaries of traditional mixology, infusing each creation with innovative ingredients and imaginative twists. From classic cocktails with a modern twist to signature concoctions that defy expectations, every drink is a masterpiece waiting to be discovered. Join us at Mixology Lab and embark on a journey of taste sensations that will tantalize your palate and ignite your senses.",
+    "image": "restaurant_images/cocktail.jpeg",
+    "about": "Welcome to Mixology Lab, where the art of cocktail crafting meets the spirit of innovation at Saint Rayan Hotel. Step into our stylish and intimate setting, where every sip is a journey of discovery and every drink is a masterpiece waiting to be savored.\r\n\r\nAt Mixology Lab, we take pride in pushing the boundaries of traditional mixology, embracing creativity and experimentation to deliver a truly unique drinking experience. Our team of skilled mixologists are not just bartenders—they are alchemists, combining premium spirits, fresh ingredients, and imaginative flavors to create cocktails that are as bold and adventurous as they are delicious.\r\n\r\nWhether you're a cocktail connoisseur or a curious novice, our menu offers something for every palate and preference. From classic cocktails with a modern twist to signature creations that defy expectations, each drink is meticulously crafted with attention to detail and a passion for perfection.\r\n\r\nBut Mixology Lab is more than just a place to enjoy exceptional drinks—it's a destination for camaraderie, conversation, and connection. Gather with friends, meet new people, and share in the excitement as our mixologists showcase their craft and creativity behind the bar.\r\n\r\nSo come, join us at Mixology Lab and embark on a journey of taste sensations and sensory delights. Indulge your senses, expand your palate, and discover a world of cocktails you never knew existed. Cheers to unforgettable moments and memorable experiences at Mixology Lab.",
+    "opening": "12:00:00",
+    "closing": "00:00:00"
+  }
+},
+{
+  "model": "service.restaurant",
+  "pk": 4,
+  "fields": {
+    "name": "Café de la Crème:",
+    "description": "Embrace the charm of Parisian café culture at Café de la Crème, where every cup tells a story and every bite is a delight. From freshly baked pastries to aromatic coffees, our café offers a tempting array of treats to tantalize your taste buds and transport you to the streets of Paris. Whether you're enjoying a leisurely breakfast, a midday pick-me-up, or a casual rendezvous with friends, Café de la Crème is the perfect spot to savor the simple pleasures of life.",
+    "image": "restaurant_images/cafe.jpeg",
+    "about": "Welcome to Café de la Crème, the charming and cozy café nestled within the heart of Saint Rayan Hotel. Step into our welcoming atmosphere, where the aroma of freshly brewed coffee fills the air, and the ambiance exudes warmth and relaxation.\r\n\r\nAt Café de la Crème, we invite you to take a moment to savor the simple pleasures of life. Whether you're starting your day with a leisurely breakfast, enjoying a midday pick-me-up, or unwinding with friends over a cup of coffee, our café offers a delightful escape from the hustle and bustle of the outside world.\r\n\r\nIndulge your senses with our tempting selection of freshly baked pastries, savory sandwiches, and decadent desserts, all lovingly prepared using the finest ingredients and time-honored recipes. From buttery croissants to rich espresso drinks, each item on our menu is crafted with care and attention to detail, ensuring a truly satisfying culinary experience.\r\n\r\nBut Café de la Crème is more than just a place to enjoy delicious food and drink—it's a gathering place for community, conversation, and connection. Whether you're catching up with friends, meeting colleagues for a business lunch, or simply seeking a quiet moment of solitude, our café welcomes you with open arms.\r\n\r\nSo come, make yourself at home at Café de la Crème. Relax, recharge, and rejuvenate as you savor the flavors of our delightful cuisine and bask in the cozy ambiance of our charming café. Whether you're here for a quick bite or an extended stay, we promise to make your visit a truly memorable one.",
+    "opening": "00:00:00",
+    "closing": "06:00:00"
+  }
+},
+{
+  "model": "service.restaurant",
+  "pk": 5,
+  "fields": {
+    "name": "Elixir Lounge & Bar:",
+    "description": "Raise a glass to unforgettable moments at Elixir Lounge & Bar, where every sip is an experience to be savored. With its chic ambiance, innovative cocktails, and extensive selection of spirits, Elixir is the ultimate destination for discerning drinkers and social butterflies alike. Whether you're unwinding after a long day or kicking off a night of revelry, our talented mixologists are here to craft the perfect libation to suit your mood and elevate your spirits.",
+    "image": "restaurant_images/bar.jpeg",
+    "about": "Welcome to Elixir Lounge & Bar, the ultimate destination for sophistication and indulgence at Saint Rayan Hotel. Step into our stylish and vibrant space, where the ambiance is as intoxicating as the drinks we serve.\r\n\r\nAt Elixir Lounge & Bar, we specialize in crafting memorable moments and unforgettable experiences. Whether you're seeking a sophisticated spot for pre-dinner drinks, a lively atmosphere for a night out with friends, or a chic venue for special celebrations, our lounge and bar offer the perfect setting for every occasion.\r\n\r\nIndulge your senses with our extensive selection of handcrafted cocktails, premium spirits, and fine wines, expertly curated by our talented mixologists. From classic cocktails to innovative creations, each drink is crafted with care and precision, ensuring a symphony of flavors that delights the palate and tantalizes the senses.\r\n\r\nBut Elixir Lounge & Bar is more than just a place to enjoy exceptional drinks—it's a destination for socializing, networking, and unwinding in style. Whether you're mingling at the bar, lounging in our comfortable seating areas, or dancing the night away to the sounds of our resident DJ, our lounge and bar promise an experience that's as unforgettable as it is exhilarating.\r\n\r\nSo come, join us at Elixir Lounge & Bar and elevate your evening to new heights of sophistication and indulgence. Raise a glass, make a toast, and immerse yourself in the vibrant energy and stylish ambiance of our chic lounge and bar. Cheers to unforgettable moments and lasting memories at Elixir Lounge & Bar.",
+    "opening": "18:00:00",
+    "closing": "06:00:00"
+  }
+},
+{
+  "model": "service.restaurant",
+  "pk": 6,
+  "fields": {
+    "name": "Sereni-Tea:",
+    "description": "Escape the hustle and bustle of the day and unwind in the serene ambiance of Sereni-Tea. Join us for an exquisite Afternoon Tea experience where time slows down, and every sip is savored amidst elegant surroundings. Delight in an array of delicate pastries, savory sandwiches, and freshly brewed teas, served with a touch of sophistication and grace. Whether you're catching up with friends or simply indulging in a moment of tranquility, Sereni-Tea is the perfect destination for a leisurely afternoon retreat.",
+    "image": "restaurant_images/tea.jpeg",
+    "about": "Welcome to Sereni-Tea, where tranquility meets indulgence in the serene ambiance of Saint Rayan Hotel. Step into our oasis of calm, where time slows down, and every moment is an invitation to relax and recharge.\r\n\r\nAt Sereni-Tea, we invite you to escape the hustle and bustle of the outside world and immerse yourself in the gentle art of tea appreciation. Whether you're seeking a peaceful respite from your day or looking to indulge in a leisurely afternoon ritual, our tea lounge offers the perfect sanctuary for tea enthusiasts and relaxation seekers alike.\r\n\r\nIndulge your senses with our carefully curated selection of premium teas sourced from around the world. From delicate green teas to aromatic herbal blends, each tea is thoughtfully chosen for its exceptional quality and exquisite flavor profile. Served in elegant teapots and accompanied by dainty tea sandwiches, freshly baked scones, and delectable pastries, our Afternoon Tea experience promises a feast for the senses that's as delightful as it is decadent.\r\n\r\nBut Sereni-Tea is more than just a place to enjoy exceptional tea—it's a haven for moments of reflection, connection, and tranquility. Whether you're enjoying a quiet conversation with a friend, catching up on your reading, or simply savoring a moment of solitude, our tea lounge welcomes you with open arms.\r\n\r\nSo come, escape the chaos of the outside world and immerse yourself in the serenity of Sereni-Tea. Relax, rejuvenate, and rediscover the joy of simple pleasures as you indulge in the timeless ritual of tea appreciation. Whether you're here for a brief respite or an extended stay, we promise to make your visit a truly peaceful and memorable one.",
+    "opening": "06:00:00",
+    "closing": "18:00:00"
+  }
+},
+{
+  "model": "service.wellness",
+  "pk": 1,
+  "fields": {
+    "name": "gym",
+    "description": "Our state-of-the-art gymnasium is equipped with the latest fitness machines and equipment, catering to fitness enthusiasts of all levels. Whether guests prefer cardio workouts, strength training, or flexibility exercises, our gym offers a comprehensive fitness experience.",
+    "about": "Nestled within the serene confines of Saint Rayan Hotel lies a haven for wellness enthusiasts: our exquisite gym facility. Step into a world where health and vitality intertwine seamlessly, where every piece of equipment whispers of possibility and progress.\r\n\r\nOur gymnasium is more than just a space to break a sweat; it's a sanctuary for those committed to their fitness journey. Equipped with an extensive array of state-of-the-art machines and apparatus, our gym caters to individuals of all fitness levels and aspirations. Whether you're an avid weightlifter sculpting your physique or a cardio enthusiast seeking to elevate your endurance, our diverse selection ensures that every workout is met with enthusiasm and effectiveness.\r\n\r\nBut it's not merely the equipment that sets our gym apart—it's the ambiance. Bathed in natural light and adorned with motivating décor, our gym exudes an atmosphere of inspiration and encouragement. Our expert trainers are on hand to offer guidance, support, and personalized workout plans, ensuring that every visitor maximizes their potential and achieves their goals.\r\n\r\nBeyond the physical, our gym fosters a sense of community and camaraderie. Here, friendships are forged through shared sweat and determination, creating a support network that extends far beyond the confines of the facility. Group classes and fitness challenges provide opportunities for collective growth and achievement, further enriching the holistic wellness experience.\r\n\r\nAfter an invigorating workout, indulge in a post-exercise refreshment at our juice bar, where nutritious blends and protein-packed snacks replenish and rejuvenate. Or unwind in our relaxation area, where plush seating and tranquil ambiance invite you to linger and savor the sense of accomplishment that accompanies a successful gym session.\r\n\r\nAt Saint Rayan Hotel, we understand that wellness is not merely a destination but a journey—one that requires dedication, commitment, and the right environment to flourish. Our gym stands as a testament to this philosophy, offering a space where dreams are realized, limits are surpassed, and the path to a healthier, happier life unfolds with each rep and each step. Welcome to a world of wellness at Saint Rayan Hotel—where greatness awaits within reach.",
+    "is_available": true,
+    "opening": "06:00:00",
+    "closing": "00:00:00",
+    "image": "wellness_images/gym.jpeg"
+  }
+},
+{
+  "model": "service.wellness",
+  "pk": 2,
+  "fields": {
+    "name": "Swimming Pool",
+    "description": "Dive into relaxation at our lavish swimming pool, where guests can enjoy refreshing dips, soak up the sun on comfortable loungers, or simply unwind amidst tranquil surroundings. Our poolside service ensures that you stay refreshed and rejuvenated throughout your stay.",
+    "about": "In the heart of Saint Rayan Hotel lies a serene oasis beckoning guests to immerse themselves in tranquility and refreshment—the magnificent swimming pool. As you step into this aquatic sanctuary, the cares of the world melt away, replaced by the soothing embrace of crystal-clear waters and the gentle caress of the sun's warm rays.\r\n\r\nStretching languidly before you, the pool offers a respite from the hustle and bustle of daily life, inviting you to indulge in moments of leisure and relaxation. Whether you're seeking a vigorous swim to invigorate your senses or a leisurely float to soothe your soul, our pool caters to your every desire.\r\n\r\nSurrounded by lush greenery and swaying palm trees, the poolside exudes an ambiance of tropical paradise. Luxurious loungers beckon you to recline in comfort, while shaded cabanas provide a secluded retreat for intimate conversations or quiet contemplation.\r\n\r\nFor those seeking a culinary delight, our poolside bar offers a tempting array of refreshing beverages and delectable snacks, ensuring that your indulgence is never more than a stone's throw away. Sip on exotic cocktails as you bask in the glow of the setting sun, savoring each moment of your idyllic escape.\r\n\r\nBut the allure of our swimming pool extends beyond mere relaxation—it's a place of rejuvenation and well-being. Take advantage of our aqua fitness classes, where expert instructors guide you through invigorating workouts designed to tone muscles, improve cardiovascular health, and enhance overall vitality.\r\n\r\nAnd for our youngest guests, the pool is a playground of endless delight. Watch as their laughter fills the air while they splash and play in the shallow waters, their joy contagious and their memories everlasting.\r\n\r\nAt Saint Rayan Hotel, our swimming pool isn't just a amenity—it's an experience. It's a place where time stands still, worries fade away, and every moment is savored to the fullest. Dive in, and discover the true essence of relaxation and rejuvenation amidst the beauty and serenity of our aquatic haven.",
+    "is_available": true,
+    "opening": "06:00:00",
+    "closing": "00:00:00",
+    "image": "wellness_images/pool.jpeg"
+  }
+},
+{
+  "model": "service.wellness",
+  "pk": 3,
+  "fields": {
+    "name": "Bouncing Castle",
+    "description": "Families with children will delight in our dedicated bouncing castle area. Let your little ones' imaginations soar as they bounce and play in a safe and supervised environment, creating cherished memories that last a lifetime.",
+    "about": "Embark on a whimsical journey of pure joy and boundless imagination at Saint Rayan Hotel's enchanting bouncing castle—a magical realm where laughter reigns supreme and childhood dreams come to life. Nestled amidst our lush grounds, this inflatable wonderland promises endless hours of delight for our youngest guests and the young at heart.\r\n\r\nStep through the castle gates and into a world of vibrant colors, inflatable towers, and bouncing bridges that spark the imagination and ignite the spirit of adventure. With every leap and bound, children are transported to far-off lands where dragons roam, princesses reign, and heroes embark on epic quests.\r\n\r\nUnder the watchful eye of our attentive staff, little ones can unleash their boundless energy in a safe and supervised environment, bouncing to their heart's content while forging friendships and creating cherished memories that will last a lifetime. Meanwhile, parents can relax and unwind knowing that their children are engaged in wholesome, active play.\r\n\r\nBut the bouncing castle isn't just for kids—it's a place where families come together to share in the magic of childhood. Watch with delight as parents join their little ones on the bouncing adventure, laughter echoing through the air as generations bond over shared moments of joy and excitement.\r\n\r\nAnd for those celebrating special occasions, our bouncing castle adds an extra touch of whimsy and wonder to birthday parties, family gatherings, and other festive events. With themed decorations, music, and games, every occasion becomes a celebration to remember.\r\n\r\nAt Saint Rayan Hotel, we believe in the power of play to uplift the spirit, nourish the soul, and create lasting connections. Our bouncing castle is more than just an inflatable attraction—it's a portal to a world of imagination and possibility, where every bounce brings us closer together and reminds us of the simple joys that make life truly magical.",
+    "is_available": true,
+    "opening": "06:00:00",
+    "closing": "18:00:00",
+    "image": "wellness_images/bounce.jpeg"
+  }
+},
+{
+  "model": "service.wellness",
+  "pk": 4,
+  "fields": {
+    "name": "Sauna",
+    "description": "Escape the stresses of daily life and experience pure relaxation in our sauna facilities. Indulge in the soothing warmth as it envelops you, relieving tension from your muscles and leaving you feeling refreshed and revitalized.",
+    "about": "Indulge in the ultimate relaxation experience at Saint Rayan Hotel's luxurious sauna—a serene sanctuary where stress melts away, and tranquility reigns supreme. Tucked away amidst our wellness facilities, our sauna beckons guests to embark on a journey of rejuvenation for the mind, body, and soul.\r\n\r\nStep into the enveloping warmth of our meticulously crafted sauna chambers, where aromatic scents infuse the air, and soft ambient lighting sets the mood for relaxation. As the heat gently penetrates your skin, tensions dissolve, muscles unwind, and a profound sense of calm washes over you, transporting you\r\n\r\n to a state of blissful serenity.\r\n\r\nOur sauna experience is designed to cater to your individual preferences and wellness goals. Choose from a variety of sauna options, including traditional dry saunas, steam saunas, and infrared saunas, each offering unique benefits for detoxification, stress relief, and overall well-being. Our knowledgeable staff are on hand to assist you in selecting the perfect sauna experience tailored to your needs.\r\n\r\nAs you bask in the soothing heat, allow your senses to be tantalized by the gentle fragrance of essential oils, expertly chosen to enhance relaxation and promote inner harmony. Close your eyes and let your thoughts drift away as you surrender to the therapeutic effects of the sauna, feeling tensions melt away and a profound sense of renewal wash over you.\r\n\r\nTo further enhance your sauna experience, indulge in a refreshing cool-down session in our dedicated relaxation area, where plush seating and tranquil ambiance provide the perfect retreat for post-sauna rejuvenation. Sip on chilled beverages, hydrate with rejuvenating herbal teas, or simply savor the moment of tranquility as you bask in the afterglow of your sauna session.\r\n\r\nWhether you're seeking relief from muscle aches and pains, a respite from the stresses of daily life, or simply a moment of pure relaxation, our sauna offers the perfect escape. Step inside, and discover the transformative power of heat, steam, and serenity at Saint Rayan Hotel.",
+    "is_available": true,
+    "opening": "18:00:00",
+    "closing": "00:00:00",
+    "image": "wellness_images/sauna.jpeg"
+  }
+},
+{
+  "model": "service.wellness",
+  "pk": 5,
+  "fields": {
+    "name": "Massage",
+    "description": "Treat yourself to the ultimate pampering experience at our spa, where skilled therapists offer a variety of massage therapies tailored to your needs. From Swedish to deep tissue massages, each session is designed to promote relaxation, alleviate stress, and enhance overall well-being.",
+    "about": "Embark on a journey of pure relaxation and rejuvenation at Saint Rayan Hotel's exquisite massage spa—a tranquil haven where skilled therapists work their magic to melt away tension, soothe tired muscles, and restore balance to body and mind.\r\n\r\nStep into our serene sanctuary and leave the cares of the world behind as you immerse yourself in an oasis of calm and tranquility. The gentle scent of aromatic oils fills the air, soothing your senses and preparing you for the blissful experience that awaits.\r\n\r\nOur team of expert massage therapists are masters in the art of healing touch, drawing from a wealth of techniques and traditions to tailor each massage to your unique needs and preferences. Whether you seek the deep relaxation of a Swedish massage, the targeted relief of a deep tissue massage, or the holistic balance of a Thai massage, our therapists are dedicated to providing a personalized experience that leaves you feeling refreshed, rejuvenated, and renewed.\r\n\r\nIndulge in a luxurious full-body massage, where expert hands work their way from head to toe, releasing tension, improving circulation, and promoting a profound sense of relaxation. Or treat yourself to a specialized treatment such as hot stone therapy, aromatherapy, or reflexology, each designed to enhance your well-being and elevate your spa experience to new heights.\r\n\r\nAs you surrender to the healing power of touch, feel your worries melt away and your spirit soar, enveloped in a cocoon of warmth and tranquility. With every knead and stroke, tension dissolves, stress evaporates, and a sense of profound peace washes over you, leaving you feeling lighter, brighter, and infinitely more alive.\r\n\r\nAfter your massage, linger awhile in our serene relaxation area, where soft music and comfortable seating invite you to savor the lingering sensations of bliss and tranquility. Sip on herbal tea, nibble on fresh fruit, or simply close your eyes and bask in the glow of your newfound inner harmony.\r\n\r\nAt Saint Rayan Hotel, we believe that true wellness begins from within, and our massage spa is dedicated to helping you discover the transformative power of relaxation, rejuvenation, and self-care. Come experience the healing touch of our skilled therapists and embark on a journey of holistic well-being that will leave you feeling refreshed, revitalized, and ready to embrace life's endless possibilities.",
+    "is_available": true,
+    "opening": "18:00:00",
+    "closing": "00:00:00",
+    "image": "wellness_images/massage.jpeg"
+  }
+},
+{
+  "model": "service.wellness",
+  "pk": 6,
+  "fields": {
+    "name": "yoga",
+    "description": "Discover inner harmony and balance through our rejuvenating yoga classes led by experienced instructors. Whether you're a beginner or an experienced practitioner, our serene yoga studio provides the perfect sanctuary to cultivate mindfulness, flexibility, and inner peace.",
+    "about": "Embark on a journey of self-discovery and holistic wellness at Saint Rayan Hotel's serene yoga studio—a tranquil sanctuary where mind, body, and spirit unite in perfect harmony. Nestled amidst the lush surroundings of our wellness center, our yoga studio offers a serene escape from the stresses of daily life, inviting guests to explore the transformative power of yoga practice.\r\n\r\nStep into our tranquil studio and feel the weight of the world lift from your shoulders as you inhale the calming scents of incense and essential oils, and exhale any tension or worries. With soft lighting and soothing music setting the mood, the stage is set for a rejuvenating yoga experience like no other.\r\n\r\nLed by experienced instructors steeped in the ancient traditions of yoga, our classes cater to practitioners of all levels, from beginners to advanced yogis. Whether you're seeking to build strength and flexibility, cultivate inner peace and mindfulness, or simply reconnect with your body and breath, our diverse range of classes offers something for everyone.\r\n\r\nFlow through a dynamic vinyasa sequence, linking breath with movement as you build heat, strength, and flexibility in body and mind. Or dive deep into the practice of hatha yoga, holding poses with mindfulness and intention to cultivate balance, stability, and inner harmony.\r\n\r\nFor those seeking a more meditative experience, our restorative and yin yoga classes offer a gentle yet profound journey inward, allowing you to release tension, surrender to stillness, and tap into the healing power of relaxation and introspection.\r\n\r\nAs you move through your practice, allow yourself to be guided by the rhythm of your breath, the wisdom of your body, and the whispers of your soul. With each asana and each moment of stillness, feel yourself drawing closer to a state of wholeness and alignment, leaving behind the distractions of the external world and reconnecting with your true essence.\r\n\r\nAfter class, linger awhile in our serene meditation area, where comfortable cushions and tranquil surroundings invite you to continue your journey of self-discovery and inner exploration. Sip on herbal tea, journal your thoughts, or simply bask in the sense of peace and tranquility that permeates the space.\r\n\r\nAt Saint Rayan Hotel, we believe that yoga is more than just a physical practice—it's a path to greater self-awareness, vitality, and well-being. Come experience the transformative power of yoga and embark on a journey of self-discovery that will leave you feeling grounded, centered, and fully alive.",
+    "is_available": true,
+    "opening": "18:00:00",
+    "closing": "22:00:00",
+    "image": "wellness_images/yoga.jpeg"
+  }
+}
+]

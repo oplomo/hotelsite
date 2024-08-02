@@ -1,0 +1,48 @@
+{% extends "service/base.html" %}
+{% load static %}
+
+{% block title %}
+  roomtypes
+{% endblock title %}
+
+{% block content %}
+
+<p class="navigation">
+    <span><a href="{% url "service:home" %}">HOME</a></span> >>
+    <span><a href="{% url "service:roomtype" %}">ROOMTYPES</a></span>
+</p>
+
+
+<div class="p_restourant_info">
+    <h1 class="p_r_info_tittle">
+      ROOMTYPES
+    </h1>
+    
+   
+ <div class="p_restaurant_items">
+     
+    {% for well in room %}
+        <div class="p_r_image">
+             <div class="p_r_image_title">
+           
+              <a href="{{ well.get_absolute_url }}">{{ well.name|upper }}</a>
+                  <a href="{{ well.get_absolute_url }}" class="res_footer"><abbr title="click to view rooms under {{ well.name }}">more</abbr> &rarr;</a>
+              
+             </div>
+
+             <a href="{{ well.get_absolute_url }}" class="image_link">
+                <div class="p_r_image_item">
+                 <img src="{{ well.image.url }}" alt="{{ well.name }}">
+             </div>
+            </a>
+             
+            <div class="p_room_about">
+                {{ well.description }}
+            </div>
+
+        </div>
+ {% endfor %}
+
+
+
+{% endblock content %}

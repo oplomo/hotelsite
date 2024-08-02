@@ -1,0 +1,58 @@
+{% extends "service/base.html" %}
+{% load static %}
+
+{% block title %}
+    event_info
+{% endblock title %}
+
+{% block content %}
+    <p class="navigation">
+        <span><a href="{% url "service:home" %}">HOME</a></span> >>
+        <span><a href="{% url "service:event" %}">EVENTS</a></span> >>
+        <span><a href="{{ e_info.get_absolute_url }}">{{ e_info.name|upper }}</a></span>
+
+    </p>
+
+    <p class="e_info_name">
+        {{ e_info.name }}
+    </p>
+
+
+    <div class="e_event_info div_brd">
+        <div class="e_i_about">
+            {{ e_info.description}}
+        </div>
+        <a href="{{ e_info.image.url }}">
+            <div class="e_i_image" target="parent">
+                <img src="{{ e_info.image.url }}" alt="{{ e_info.name }}">
+            </div>
+        </a>
+
+        <div class="e_i_info">
+
+            <p class="e_i_title">DATE: {{ e_info.date }}</p>
+            <p class="e_i_title">START-TIME: {{ e_info.start_time }}</p>
+            <p class="e_i_title">END_TIME:{{ e_info.end_time }}</p>
+            <p class="e_i_title">LOCATION <i class="fa-solid fa-location-dot"></i>:  {{ e_info.location }}</p>
+            <p class="e_i_title">ORGANISER: {{ e_info.organiser }}</p>
+            <p class="e_i_title">REQUIREMENT: {{ e_info.entry }}</p>
+
+        </div>
+
+        {% if request.user.is_authenticated %}
+            <div class="e_i_form">
+                <form action="" method="POST">
+                    {{ when.as_p }}
+                    {% csrf_token %}
+                    <input type="submit" value="set reminder">
+                </form>
+            </div>
+        {% else %}
+            <div class="e_i_form_not">
+                you can <br> <br> <a href="{% url 'login' %}?next={% url 'service:event' %}" class="log_reg">log in</a> <br> <br>  or<br> <br> <a href="{% url "service:register" %}" class="log_reg">register</a><br> <br>  if you dont have an account so as to set reminders to event and enjoy user benefits
+            </div>
+        {% endif %}
+
+    </div>
+
+{% endblock content %}

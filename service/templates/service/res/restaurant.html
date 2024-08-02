@@ -1,0 +1,44 @@
+{% extends "service/base.html" %}
+{% load static %}
+{% block title %}restourant {% endblock title %}
+
+{% block content %}
+<p class="navigation">
+    <span><a href="{% url "service:home" %}">HOME</a></span> >>
+    <span><a href="{% url "service:restaurant" %}">RESTAURANT & BAR</a></span>
+</p>
+
+<div class="p_restourant_info">
+   <p class="p_r_info_tittle">
+    RESTAURANT & BAR
+   </p>
+   
+   <p class="p_r_info_about">
+       
+    Superb culinary experience is a key thread in the fabric of The st.rayan. Alena restaurant is an award-winning restaurant set on the ground floor of The st.rayan main building, leading outside to the shaded pavilion terrace serving an all-day menu. Our 3rd-floor rooftop, with a sunset view, is home to internationally acclaimed Japanese restaurant Dinings (a sister restaurant to Dinings SW3 London). The Library Bar is on the ground floor and is a perfect setting for meetings and lunch during the day and is renowned as one of Tel Aviv’s most atmospheric cocktail bars in the evening, where food is also served from the all-day menu. By the pool, dishes from Alena’s menu and cocktails from The Library Bar are served, giving guests the chance to fully relax and be served directly to their loungers.
+   </p>
+</div>
+
+<div class="p_restaurant_items">
+     
+    {% for dish in restaurant %}
+        <div class="p_r_image">
+             <div class="p_r_image_title">
+                <a href="{{ dish.get_absolute_url }}">{{ dish.name }}</a>
+             </div>
+
+             <a href="{{ dish.get_absolute_url }}" class="image_link">
+                <div class="p_r_image_item">
+                 <img src="{{ dish.image.url }}" alt="{{ dish.name }}">
+             </div>
+            </a>
+        </div>
+        
+    {% endfor %}
+
+
+
+   </div>
+
+
+{% endblock content %}

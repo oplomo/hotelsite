@@ -1,0 +1,133 @@
+{% extends "service/base.html" %}
+{% load static %}
+{% block title %}
+ reserved rooms
+{% endblock %}
+{% block content %}
+ <h1 class="rssv">RESERVED ROOMS FOR BOOKING</h1>
+ 
+ <div class="tcarry">
+ <table class="cart">
+   <thead>
+     <tr>
+       <th>Image</th>
+       <th>room</th>
+       <th>duration / number of guest</th>
+       <th>Remove</th>
+       <th>Unit price</th>
+       <th>Price</th>
+       <th>from</th>
+       <th>to</th>
+     </tr>
+   </thead>
+   <tbody>
+     {% for item in cart %}
+       {% with product=item.room %}
+         <tr>
+           <td>
+             <a href="{{ product.get_absolute_url }}">
+               <img src="{% if product.image %}{{ product.image.url }}
+               {% else %}{% static "img/no_image.png" %}{% endif %}" style="width:20vw;height:30vh">
+             </a>
+           </td>
+           <td>{{ product.number }}</td>
+           <td>
+             
+            {% if product.room_type.name == "meeting" %}
+                
+            <form action="{% url "cart:cart_add" product.number %}" method="post">
+              {{ item.update_room_form.duration }}
+              {{ item.update_room_form.override_duration }}
+              {{ item.update_room_form.number_of_guest.as_hidden }}
+              {{ item.update_room_form.override_number_of_guest }}
+              {{ item.update_room_form.start_date }}
+              {{ item.update_room_form.end_date }}
+
+              <input type="submit" value="Update">
+              {% csrf_token %}
+           </form>            
+
+            {% else %}            
+            
+            <form action="{% url "cart:cart_add" product.number %}" method="post">
+              {{ item.update_room_form.duration }}
+              {{ item.update_room_form.override_duration }}
+              {{ item.update_room_form.number_of_guest }}
+              {{ item.update_room_form.override_number_of_guest }}
+              {{ item.update_room_form.start_date }}
+              {{ item.update_room_form.end_date }}
+
+              <input type="submit" value="Update">
+              {% csrf_token %}
+           </form>            
+          
+            
+            {% endif %}
+            
+            </td>
+           
+           <td>
+             <form action="{% url "cart:cart_remove" product.number %}"method="post">
+               <input type="submit" value="Remove">
+               {% csrf_token %}
+             </form>
+           </td>
+           
+           <td class="num">${{ item.price }}</td>
+           <td class="num">${{ item.total_price }}</td>
+           <td class="num">{{ item.start_date }}</td>
+           <td class="num">{{ item.end_date }}</td>
+         </tr>
+       {% endwith %}
+     {% endfor %}
+     <tr lass="total">
+       <td>Total</td>
+       <td colspan="4"></td>
+       <td class="num">${{ cart.get_total_price }}</td>
+       <td>Total</td>
+
+     </tr>
+   </tbody>
+ </table>
+</div>
+
+ <p class="text-right">
+   <a href="{% url "service:booking" %}" class="res_footer"> &larr; back</a>
+   {% if request.user.is_authenticated %}
+      <div class="cl">
+    <button onclick="openPopUp()" class="click">BOOK</button>
+   </div>
+
+<div class="pop" id="up">
+    <div class="ee" id="xx" onclick="hidePopUP()">&cross;</div>
+     <p>payment is made through mpesa</p>
+    <form action="{% url "service:account" %}" method="post" name="booking_form">
+      {% csrf_token %}
+      <div >
+             <label for="phone_number">enter phone number for payment</label>
+             <input type="tel" name="phone_number" id="phn">
+
+            </div>
+        <div>
+          <label for="amount">total amount</label>
+          <input type="number" name="amount" id="amn" value="{{  cart.get_total_price|floatformat:"2" }}" readonly>
+        </div>
+
+        
+        <input type="submit" value="pay now" class="log_reg">
+        
+    </form>
+    {% comment %} <a href="{% url "service:account" %}" class="button">DEPOSIT</a> {% endcomment %}
+
+</div>
+
+   {% else %}
+   <div class="cl">
+    <button class="log_reg"><a href="{% url 'login' %}?next={% url 'cart:cart_detail' %}">Login</a></button> to make a room booking <br> <br>
+    <button class="log_reg"><a href="{% url 'service:register' %}?next={% url 'cart:cart_detail' %}">register here</a></button> if you dont hae an account
+  </div>
+
+   {% endif %}
+   
+ </p>
+{% endblock %}

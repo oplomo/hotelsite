@@ -1,0 +1,52 @@
+{% extends "service/base.html" %}
+{% load static %}
+
+{% block title %}
+events
+{% endblock title %}
+
+{% block content %}
+
+<p class="navigation">
+    <span><a href="{% url "service:home" %}">HOME</a></span> >>
+    <span><a href="{% url "service:event" %}">EVENTS</a></span>
+</p>
+
+<div class="upcoming">
+  <div class="event_title">Upcoming Events</div>
+  <div class="event_holder">
+    {% for event in upcoming_events %}
+    <div class="up_events">
+      <div class="evname">
+        <div class="event_name">        
+            <a href="{{ event.get_absolute_url }}" class="evn">{{ event.name }}</a>
+        </div>
+        <div class="event_info">
+            <a href="{{ event.get_absolute_url }}" class="res_footer">click for more info &rarr;</a>
+        </div>
+      </div>
+      <a href="{{ event.get_absolute_url }}">
+        <div class="event_image">
+            <img src="{{ event.image.url }}" alt="{{ event.name }}" srcset="">
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="event_title pste">Past Events</div>
+
+<div class="past-events">
+    <div class="past-events-grid">
+      {% for event in past_events %}
+      <div class="past-event-item">
+        <img src="{{ event.image.url }}" alt="{{ event.name }}">
+        <div class="event-date">{{ event.date }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+{% endblock content %}
+
