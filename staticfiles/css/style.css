@@ -130,7 +130,6 @@ html, body {
 .open {
         visibility: visible;
         top: 50%;
-        /* height: 70vh; */
         transform: translate(-50%, -50%) scale(1);     
     }
 .ee {
@@ -189,9 +188,7 @@ html, body {
 .swiper-slide{
 position: relative; }
 
-.hotel_name{
-    
-}
+
 .hot_name{
     font-weight: 500;
     font-size: 2em;
@@ -234,8 +231,8 @@ position: relative; }
 
 .restourant_items{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Define grid columns */
-    gap: 10px; /* Gap between grid items */ 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 10px; 
 }
 
 
@@ -261,9 +258,7 @@ position: relative; }
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
-.res_about_info{
-    /* color: aqua; */
-}
+
 .res_footer{
     padding: 5px 10px;
     text-align: center;
@@ -343,9 +338,9 @@ position: relative; }
 .p_restaurant_items{
     display: grid;
     grid-template-columns: repeat(2, 35%); 
-    grid-auto-rows: minmax(100px, auto); /* Rows grow as content is added */
+    grid-auto-rows: minmax(100px, auto); 
     gap: 10px;
-    justify-content: center; /* Center the grid horizontally */
+    justify-content: center;
     align-content: center;
         
 
@@ -446,7 +441,6 @@ position: relative; }
     margin-bottom: 30px;
 }
 
-/* Styling for header icon */
 .header-icon {
     cursor: pointer;
     display: flex;
@@ -455,7 +449,6 @@ position: relative; }
     font-size: 2em;
 }
 
-/* Styling for sidebar */
 .sidebar {
     position: fixed;
     top: 10px;
@@ -463,10 +456,9 @@ position: relative; }
     width: 250px;
     background-color: rgb(0, 0, 110);
     transition: left 0.3s ease;
-    z-index: 4; /* Ensure sidebar appears above other content */
+    z-index: 4; 
 }
 
-/* Styling for sidebar links */
 .sidebar ul {
     list-style: none;
     padding: 0;
@@ -569,9 +561,9 @@ align-content: center;
 .e_event_info{
     display: grid;
     grid-template-columns: repeat(2, 25%); 
-    grid-auto-rows: minmax(100px, auto); /* Rows grow as content is added */
+    grid-auto-rows: minmax(100px, auto);
     gap: 0px;
-    justify-content: center; /* Center the grid horizontally */
+    justify-content: center; 
     align-content: center;
         
 }
@@ -812,7 +804,6 @@ height: 30vh;
 
 .sta_pt{
     display: flex;
-    /* border-bottom: .1px solid white; */
 }
 
 
@@ -1021,7 +1012,6 @@ height: 30vh;
 .em_instr> *{
     text-align: center;
 }
-div{bordder: 2px red solid;} 
 
 
 p{
@@ -1112,7 +1102,6 @@ p{
     margin: auto;
 }
 
-/* Contact Section */
 .contact {
     flex: 1;
     background: #02181ada;
@@ -1121,7 +1110,6 @@ p{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Contact Item Styles */
 .ci {
     margin-bottom: 15px;
 }
@@ -1138,7 +1126,6 @@ p{
     font-weight: normal;
 }
 
-/* Social Media Section */
 .co_social {
     font-weight: bold;
     margin-top: 20px;
@@ -1146,7 +1133,6 @@ p{
     color: red;
 }
 
-/* Social Media Icons */
 .co_ic {
     display: flex;
     gap: 15px;
@@ -1232,7 +1218,7 @@ p{
     
 @media screen and (max-width: 770px) {
     
-    div{border: 2px rgb(159, 248, 15) solid;} 
+    /* div{border: 2px rgb(159, 248, 15) solid;}  */
 
         .motto{
             font-size: 2em;
@@ -1274,7 +1260,7 @@ p{
         .p_restaurant_items{
             display: grid;
             grid-template-columns: repeat(2, 50%); 
-            grid-auto-rows: minmax(100px, auto); /* Rows grow as content is added */
+            grid-auto-rows: minmax(100px, auto); 
             gap: 10px;
                        
         
@@ -1397,8 +1383,8 @@ p{
         .e_event_info{
             display: grid;
             grid-template-columns: 1fr; 
-            grid-auto-rows: minmax(100px, auto); /* Rows grow as content is added */
-            justify-content: center; /* Center the grid horizontally */
+            grid-auto-rows: minmax(100px, auto); 
+            justify-content: center; 
             align-content: center;
                 
         }
@@ -1483,7 +1469,7 @@ p{
     
     
 @media screen and (max-width: 992px) and (min-width: 770.1px) {
-    div{border: 2px rgb(48, 149, 243) solid;} 
+    /* div{border: 2px rgb(48, 149, 243) solid;}  */
     .motto{
         font-size: 2.3em;
     }
@@ -1538,7 +1524,7 @@ p{
     .p_restaurant_items{
         display: grid;
         grid-template-columns: repeat(2, 50%); 
-        grid-auto-rows: minmax(100px, auto); /* Rows grow as content is added */
+        grid-auto-rows: minmax(100px, auto); 
         gap: 10px;
                    
     
@@ -1655,7 +1641,7 @@ p{
     .e_event_info{
         display: grid;
         grid-template-columns: repeat(2, 50%); 
-        grid-auto-rows: minmax(100px, auto); /* Rows grow as content is added */
+        grid-auto-rows: minmax(100px, auto); 
 
     }
 
@@ -1704,7 +1690,7 @@ p{
           
 }
 @media screen and (max-width: 1199px) and (min-width: 992.1px) {
-    div{border: 2px rgb(214, 54, 188) solid;} 
+    /* div{border: 2px rgb(214, 54, 188) solid;}  */
 
 
     .home_booking form{   
@@ -1744,7 +1730,7 @@ p{
     .p_restaurant_items{
         display: grid;
         grid-template-columns: repeat(2, 50%); 
-        grid-auto-rows: minmax(100px, auto); /* Rows grow as content is added */
+        grid-auto-rows: minmax(100px, auto); 
         gap: 10px;
                    
     
@@ -1780,7 +1766,7 @@ p{
     .e_event_info{
         display: grid;
         grid-template-columns: repeat(2, 45%); 
-        grid-auto-rows: minmax(100px, auto); /* Rows grow as content is added */
+        grid-auto-rows: minmax(100px, auto); 
 
     }
 
@@ -1813,6 +1799,6 @@ p{
       
 }
 @media screen and (min-width: 1450px) {
-    div{border: 2px rgb(13, 155, 37) solid;} 
+    /* div{border: 2px rgb(13, 155, 37) solid;}  */
 
     }
