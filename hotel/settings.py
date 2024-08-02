@@ -113,6 +113,9 @@ USE_I18N = True
 USE_TZ = True
 
 
+# Set the base directory of your project
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
@@ -128,9 +131,6 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
-# Set the base directory of your project
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Define the media directory where uploaded files will be stored
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
